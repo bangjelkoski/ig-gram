@@ -1,12 +1,14 @@
 import reset from 'styled-reset';
-import { above, sans } from 'styles';
+import { above, sans, loadFonts } from 'styles';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
+    ${loadFonts}
 
-    @import url('https://fonts.googleapis.com/css?family=Manjari:400,700&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=Grand+Hotel&display=swap');
+    * {
+        box-sizing: border-box;
+    }
 
     html {
         font-size: 13px;

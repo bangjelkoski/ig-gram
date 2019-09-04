@@ -4,53 +4,53 @@ import { boxShadows } from 'styles';
 
 const Header = styled.header`
     background: ${({ theme }) => theme.headerBackground};
-    border-bottom: 1px solid ${({ theme }) => theme.grey[300]};
+    border-bottom: 2px solid ${({ theme }) => theme.grey[300]};
     position: fixed;
     height: 3rem;
     width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
     box-shadow: ${boxShadows['sm']};
+
+    ${flex.horizontal};
+    ${flex.centerHorizontalV};
 `;
 
 const HeaderInner = styled.div`
+    padding: 0 0.5rem;
     margin: 0 auto;
     width: 100%;
 
+    ${flex.horizontal};
+    ${flex.centerHorizontalV};
+    ${flex.spaceBetween};
+
     ${above['md']`
-        width: 90%;
+        width: 75%;
     `}
 
     ${above['lg']`
-        width: 75%;
+        width: 60%;
     `}
 `;
 
 const Logo = styled.div`
     color: ${({ theme }) => theme.primary[700]};
     cursor: pointer;
+    width: 25%;
     ${flex.horizontal}
     ${flex.centerHorizontalV}
-
-    svg {
-        width: 2.25rem;
-        height: 2.25rem;
-        padding-right: 2rem;
-
-        path {
-            fill: ${({ theme }) => theme.logo.icon};
-        }
-    }
-
-    span {
-        border-left: 1px solid ${({ theme }) => theme.grey[700]};
-        padding-left: 2rem;
-        font-size: 1.75rem;
-        letter-spacing: -0.01em;
-        color: ${({ theme }) => theme.logo.text};
-        ${logoFont}
-    }
 `;
 
-export { Header, HeaderInner, Logo };
+const Brand = styled.span`
+    ${logoFont}
+    border-left: 1px solid ${({ theme }) => theme.grey[700]};
+    padding-left: 1.5rem;
+    font-size: 1.75rem;
+    letter-spacing: -0.01em;
+    color: ${({ theme }) => theme.logo.text};
+`;
+
+Header.HeaderInner = HeaderInner;
+Header.Logo = Logo;
+Header.Logo.Brand = Brand;
+
+export default Header;

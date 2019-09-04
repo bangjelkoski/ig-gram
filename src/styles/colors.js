@@ -95,7 +95,7 @@ const light = {
     bodyBackground: defaultColors.grey[100],
     headerBackground: defaultColors.white,
     logo: {
-        icon: defaultColors.grey[700],
+        icon: defaultColors.grey[800],
         text: defaultColors.grey[800],
     },
 };
