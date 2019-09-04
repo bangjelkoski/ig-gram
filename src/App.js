@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as ServiceWorker from './sw';
+import React, { Component } from 'react';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from 'styles/global';
+import { light, dark } from 'styles';
+import Header from 'components/layout/Header';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    state = {
+        theme: 'light',
+    };
+
+    handleToggleTheme() {
+        this.setState(previousState => ({
+            theme: previousState.theme !== 'light' ? 'light' : 'dark',
+        }));
+    }
+
+    render() {
+        return (
+            <ThemeProvider theme={this.state.theme === 'light' ? light : dark}>
+                <div>
+                    <GlobalStyle />
+                    <Header toggleTheme={() => this.handleToggleTheme()} />
+                    <main>
+                        <h1>Testing</h1>
+                    </main>
+                    <footer />
+                </div>
+            </ThemeProvider>
+        );
+    }
 }
+
+ServiceWorker.unregister();
 
 export default App;
