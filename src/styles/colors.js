@@ -1,20 +1,22 @@
+const grey = {
+    100: '#F7FAFC',
+    200: '#EDF2F7',
+    300: '#E2E8F0',
+    400: '#CBD5E0',
+    500: '#A0AEC0',
+    600: '#718096',
+    700: '#4A5568',
+    800: '#2D3748',
+    900: '#1A202C',
+};
+
 const defaultColors = {
+    grey: { ...grey },
+
     transparent: 'transparent',
 
     black: '#1b1b1b',
     white: '#fff',
-
-    grey: {
-        100: '#F7FAFC',
-        200: '#EDF2F7',
-        300: '#E2E8F0',
-        400: '#CBD5E0',
-        500: '#A0AEC0',
-        600: '#718096',
-        700: '#4A5568',
-        800: '#2D3748',
-        900: '#1A202C',
-    },
 
     danger: {
         100: '#FFF5F5',
@@ -92,21 +94,46 @@ const defaultColors = {
 
 const light = {
     ...defaultColors,
-    bodyBackground: defaultColors.grey[100],
-    headerBackground: defaultColors.white,
+    ...grey,
+    bodyBackground: grey[100],
+    header: {
+        background: defaultColors.white,
+        textColor: grey[800],
+        borderBottom: grey[200],
+    },
+    inputs: {
+        inverted: {
+            background: grey[200],
+            textColor: grey[800],
+            border: grey[300],
+        },
+    },
     logo: {
-        icon: defaultColors.grey[800],
-        text: defaultColors.grey[800],
+        icon: grey[800],
+        text: grey[800],
+        border: grey[600],
     },
 };
 
 const dark = {
     ...defaultColors,
-    bodyBackground: defaultColors.grey[800],
-    headerBackground: defaultColors.grey[700],
+    bodyBackground: grey[800],
+    header: {
+        background: grey[900],
+        textColor: grey[200],
+        borderBottom: grey[700],
+    },
+    inputs: {
+        inverted: {
+            background: grey[700],
+            textColor: grey[200],
+            border: grey[800],
+        },
+    },
     logo: {
-        icon: defaultColors.primary[500],
-        text: defaultColors.grey[300],
+        icon: grey[100],
+        text: grey[100],
+        border: grey[300],
     },
 };
 

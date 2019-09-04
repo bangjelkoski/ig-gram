@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { boxShadows } from 'styles';
+import { boxShadows, transitions, transition } from 'styles';
 
 const InputWrap = styled.div`
     margin-bottom: ${props => (props.marginless ? '0' : '1rem')};
@@ -24,12 +24,22 @@ const TextInput = styled.input`
     }
 
     &::placeholder {
+        color: ${({ theme }) => theme.grey[700]};
         opacity: 0.75;
     }
 `;
 
 const InvertedTextInput = styled(TextInput)`
-    background: ${({ theme }) => theme.grey[200]};
+    background: ${({ theme }) => theme.inputs.inverted.background};
+    color: ${({ theme }) => theme.inputs.inverted.textColor};
+    border: 1px solid ${({ theme }) => theme.inputs.inverted.border};
+    ${transition('background-color', 'color', 'border')};
+
+    &::placeholder {
+        color: ${({ theme }) => theme.inputs.inverted.textColor};
+        opacity: 0.75;
+        ${transitions.color}
+    }
 `;
 
 export { InputWrap, TextInput, InvertedTextInput };

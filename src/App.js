@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'styles/global';
 import { light, dark } from 'styles';
-import Header from 'components/layout/Header/header';
+import Header from 'components/layout/Header';
+import 'styles/fonts.css';
 
 class App extends Component {
     state = {

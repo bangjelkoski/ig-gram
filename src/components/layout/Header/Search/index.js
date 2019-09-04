@@ -5,7 +5,7 @@ class SearchInput extends Component {
     searchInput = React.createRef();
 
     handleSearchFocus(e) {
-        if (e.keyCode === 191) {
+        if (e.keyCode === 191 && document.activeElement !== this.searchInput.current) {
             e.preventDefault();
             this.searchInput.current.focus();
         }
@@ -22,7 +22,7 @@ class SearchInput extends Component {
     render() {
         return (
             <ColHalf>
-                <InputWrap marginless="{true}">
+                <InputWrap marginless={true}>
                     <InvertedTextInput {...this.props} ref={this.searchInput}></InvertedTextInput>
                 </InputWrap>
             </ColHalf>

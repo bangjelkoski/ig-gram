@@ -1,7 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
+import { transitions } from 'styles';
 
-const ToggleWrap = styled.div`
+export const ToggleWrap = styled.div`
     .label-left {
         &:empty {
             margin-left: -10px;
@@ -12,8 +12,8 @@ const ToggleWrap = styled.div`
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            transition: 0.5s ease-in-out;
             outline: none;
+            ${transitions.all}
         }
 
         &:before {
@@ -80,7 +80,7 @@ const ToggleWrap = styled.div`
 
                 &:after {
                     background: rgba(0, 0, 0, 0.15);
-                    border: 1px solid ${({ theme }) => theme.grey[100]};
+                    border: 1px solid ${({ theme }) => theme.grey[700]};
                 }
             }
 
@@ -107,20 +107,3 @@ const ToggleWrap = styled.div`
         font-weight: normal;
     }
 `;
-
-const Toggle = function(props) {
-    return (
-        <ToggleWrap>
-            <input
-                type="checkbox"
-                id="theme-toggle"
-                defaultChecked={props.theme !== 'light'}
-                onChange={props.toggleTheme}
-            />
-            <label htmlFor="theme-toggle" className="label-left"></label>
-            <label htmlFor="theme-toggle" className="label"></label>
-        </ToggleWrap>
-    );
-};
-
-export default Toggle;

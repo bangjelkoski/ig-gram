@@ -1,10 +1,9 @@
 import reset from 'styled-reset';
-import { above, sans, loadFonts } from 'styles';
+import { above, sans, transitions } from 'styles';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
-    ${loadFonts}
 
     * {
         box-sizing: border-box;
@@ -26,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
         background: ${({ theme }) => theme.bodyBackground};
         font-size: 1rem;
         ${sans}
+        ${transitions.backgroundColor}
     }
 `;
 
