@@ -9,6 +9,7 @@ const Header = styled.header`
     height: ${sizes.header};
     width: 100%;
     box-shadow: ${boxShadows['sm']};
+    z-index: 10;
 
     ${transition('background-color', 'border-color')};
     ${flex.horizontal};

@@ -4,6 +4,7 @@ import GlobalStyle from 'styles/global';
 import Header from 'components/Header';
 import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
+import Posts from 'components/Posts';
 import { ThemeProvider } from 'styled-components';
 import { light, dark } from 'styles';
 import 'styles/fonts.css';
@@ -25,7 +26,7 @@ class App extends Component {
                 <div>
                     <GlobalStyle />
                     <Header theme={this.state.theme} toggleTheme={() => this.handleToggleTheme()} />
-                    <Main sidebar={<Sidebar />} content={'Testing Content'}></Main>
+                    <Main sidebar={<Sidebar />} content={<Posts />}></Main>
                 </div>
             </ThemeProvider>
         );

@@ -30,7 +30,7 @@ const UserData = styled.div`
 `;
 
 const UserWrap = styled.div`
-    margin-bottom: 1.5rem;
+    margin-bottom: ${({ marginless }) => (!marginless ? '1.5rem' : 0)};
     ${flex.horizontal}
     ${flex.centerHorizontalV}
 
