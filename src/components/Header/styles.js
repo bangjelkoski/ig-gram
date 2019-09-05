@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { above, flex, transition } from 'styles';
+import { flex, transition, sizes, container } from 'styles';
 import { boxShadows } from 'styles';
 
 const Header = styled.header`
     background: ${({ theme }) => theme.header.background};
     border-bottom: 2px solid ${({ theme }) => theme.header.borderBottom};
     position: fixed;
-    height: 3rem;
+    height: ${sizes.header};
     width: 100%;
     box-shadow: ${boxShadows['sm']};
 
@@ -17,20 +17,10 @@ const Header = styled.header`
 
 const HeaderInner = styled.div`
     padding: 0 0.5rem;
-    margin: 0 auto;
-    width: 100%;
-
+    ${container};
     ${flex.horizontal};
     ${flex.centerHorizontalV};
     ${flex.spaceBetween};
-
-    ${above['md']`
-        width: 75%;
-    `}
-
-    ${above['lg']`
-        width: 60%;
-    `}
 `;
 
 Header.HeaderInner = HeaderInner;

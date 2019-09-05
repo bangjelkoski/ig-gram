@@ -96,6 +96,19 @@ const light = {
     ...defaultColors,
     ...grey,
     bodyBackground: grey[100],
+    textColor: grey[800],
+    border: grey[200],
+    buttons: {
+        primary: {
+            text: defaultColors.white,
+            background: defaultColors.primary[500],
+            hover: defaultColors.primary[700],
+        },
+    },
+    card: {
+        background: defaultColors.white,
+        border: grey[300],
+    },
     header: {
         background: defaultColors.white,
         textColor: grey[800],
@@ -118,6 +131,19 @@ const light = {
 const dark = {
     ...defaultColors,
     bodyBackground: grey[800],
+    textColor: grey[200],
+    border: grey[700],
+    buttons: {
+        primary: {
+            text: defaultColors.grey[700],
+            background: defaultColors.primary[300],
+            hover: defaultColors.primary[400],
+        },
+    },
+    card: {
+        background: grey[700],
+        border: grey[800],
+    },
     header: {
         background: grey[900],
         textColor: grey[200],

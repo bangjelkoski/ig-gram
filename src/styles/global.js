@@ -1,5 +1,5 @@
 import reset from 'styled-reset';
-import { above, sans, transitions } from 'styles';
+import { above, sans, transition } from 'styles';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -23,9 +23,10 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background: ${({ theme }) => theme.bodyBackground};
+        color: ${({ theme }) => theme.textColor};
         font-size: 1rem;
         ${sans}
-        ${transitions.backgroundColor}
+        ${transition('background-color', 'color')}
     }
 `;
 

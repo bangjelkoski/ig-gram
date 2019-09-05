@@ -1,9 +1,11 @@
 import * as ServiceWorker from './sw';
 import React, { Component } from 'react';
-import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'styles/global';
+import Header from 'components/Header';
+import Main from 'components/Main';
+import Sidebar from 'components/Sidebar';
+import { ThemeProvider } from 'styled-components';
 import { light, dark } from 'styles';
-import Header from 'components/layout/Header';
 import 'styles/fonts.css';
 
 class App extends Component {
@@ -23,10 +25,7 @@ class App extends Component {
                 <div>
                     <GlobalStyle />
                     <Header theme={this.state.theme} toggleTheme={() => this.handleToggleTheme()} />
-                    <main>
-                        <h1>Testing</h1>
-                    </main>
-                    <footer />
+                    <Main sidebar={<Sidebar />} content={'Testing Content'}></Main>
                 </div>
             </ThemeProvider>
         );
