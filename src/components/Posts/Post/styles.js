@@ -13,11 +13,18 @@ const Image = styled.img`
 `;
 
 const CaptionWrap = styled.div`
-    padding: 1rem;
+    padding: 1rem 1rem 0.5rem;
+    font-size: 0.9rem;
+`;
+
+const CommentsWrap = styled.div`
+    padding: 1rem 1rem 0;
+    border-top: 1px solid ${({ theme }) => theme.border};
 `;
 
 PostWrap.Title = TitleWrap;
 PostWrap.Image = Image;
 PostWrap.CaptionWrap = CaptionWrap;
+PostWrap.CommentsWrap = CommentsWrap;
 
 export default PostWrap;

@@ -77,19 +77,6 @@ const defaultColors = {
         800: '#434190',
         900: '#3C366B',
     },
-
-    /** primary: {
-        100: '#EBF8FF',
-        200: '#BEE3F8',
-        300: '#90CDF4',
-        400: '#63B3ED',
-        500: '#4299E1',
-        600: '#3182CE',
-        700: '#2B6CB0',
-        800: '#2C5282',
-        900: '#2A4365',
-    },
-    */
 };
 
 const light = {
@@ -132,7 +119,7 @@ const dark = {
     ...defaultColors,
     bodyBackground: grey[800],
     textColor: grey[200],
-    border: grey[700],
+    border: grey[800],
     buttons: {
         primary: {
             text: defaultColors.grey[700],
@@ -142,7 +129,7 @@ const dark = {
     },
     card: {
         background: grey[700],
-        border: grey[800],
+        border: grey[900],
     },
     header: {
         background: grey[900],

@@ -7,7 +7,7 @@ const CardWrap = styled.div`
     background: ${({ theme }) => theme.card.background};
     border: 1px solid ${({ theme }) => theme.card.border};
     padding: ${({ marginless }) => (!marginless ? '1rem' : 0)};
-    ${boxShadows['sm']};
+    box-shadow: ${boxShadows['sm']};
     ${transition('background-color', 'border-color')};
 `;
 
