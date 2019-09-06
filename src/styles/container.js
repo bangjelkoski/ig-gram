@@ -2,8 +2,8 @@ import { css } from 'styled-components';
 import { above } from 'styles';
 
 const container = css`
-    margin: 0 auto;
-    width: 90%;
+    ${`margin: 0 auto;
+    width: 90%;`}
 
     ${above['md']`
         width: 75%;

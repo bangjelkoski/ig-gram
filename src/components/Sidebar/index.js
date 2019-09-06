@@ -4,6 +4,8 @@ import Card from 'components/Card';
 import Suggestion from './Suggestion';
 import users from 'data/users';
 import user from 'data/user';
+import Sticky from 'react-stickynode';
+import { isMobile } from 'react-device-detect';
 import { randomize } from 'utils/random';
 
 class Sidebar extends Component {
@@ -20,7 +22,7 @@ class Sidebar extends Component {
         const suggestions = randomize(users);
 
         return (
-            <div>
+            <Sticky enabled={!isMobile} top={70}>
                 <User {...user} />
                 <Card>
                     {suggestions &&
@@ -29,7 +31,7 @@ class Sidebar extends Component {
                             <Suggestion key={`suggestion-${suggestion.id}`} {...suggestion} />
                         ))}
                 </Card>
-            </div>
+            </Sticky>
         );
     }
 }

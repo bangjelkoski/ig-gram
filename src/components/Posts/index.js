@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from './Post';
+import Post from 'components/Post';
 import allPosts from 'data/posts';
 import users from 'data/users';
 import comments from 'data/comments';
